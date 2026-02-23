@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Usaha Buku</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html">Beranda</a>
+        <a href="produk.html">Produk</a>
+        <a href="bedah-buku.html">Bedah Buku</a>
+        <a href="testimoni.html">Testimoni</a>
+        <a href="tampil-testimoni.html">Testimoni Pembeli</a>
+    </nav>
+
+    <h1>Storyline Store</h1>
+    <h2>BOOKLYST LADY</h2>
+
+    <main class="formulir">
+        <h2>Berikan Testimoni Anda</h2>
+
+        <!-- FORM SUDAH ADA ACTION & METHOD -->
+        <form action="proses-testimoni.html" method="GET">
+
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" name="nama" required placeholder="Nama lengkap">
+
+            <label for="asal_sekolah">Asal Sekolah/Instansi/Komunitas:</label>
+            <input type="text" id="asal_sekolah" name="asal_sekolah" required placeholder="SMA Al-Kautsar">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="email@example.com">
+
+            <label for="judul_buku">Judul Buku yang Dibeli:</label>
+            <input type="text" id="judul_buku" name="judul_buku" required>
+
+            <label for="rating">Rating (1-5):</label>
+            <input type="number" id="rating" name="rating" min="1" max="5" required>
+
+            <label for="pesan">Testimoni:</label>
+            <textarea id="pesan" name="pesan" rows="5" required placeholder="Tulis pengalaman Anda..."></textarea>
+
+            <button type="submit">Kirim Testimoni</button>
+
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Storyline Store</p>
+    </footer>
+
+</body>
+</html>

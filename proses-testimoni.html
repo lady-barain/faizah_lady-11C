@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Memproses Testimoni</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #f6e6d7, #e8c7a8);
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+        }
+
+        .box {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            width: 350px;
+        }
+
+        h2 {
+            color: #8b4513;
+            margin-bottom: 20px;
+        }
+
+        .spinner {
+            border: 6px solid #f3f3f3;
+            border-top: 6px solid #a0522d;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        p {
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <h2>✨ Testimoni Kamu Sedang Diproses ✨</h2>
+        <div class="spinner"></div>
+        <p>Mohon tunggu sebentar yaa...</p>
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+
+        const dataBaru = {
+            nama: params.get("nama"),
+            asalsekolah: params.get("asal_sekolah"),
+            email: params.get("email"),
+            judul: params.get("judul_buku"),
+            rating: params.get("rating"),
+            pesan: params.get("pesan")
+        };
+
+        let testimoniList = JSON.parse(localStorage.getItem("testimoniList")) || [];
+
+        testimoniList.push(dataBaru);
+
+        localStorage.setItem("testimoniList", JSON.stringify(testimoniList));
+
+        // Delay 2 detik biar ada efek loading
+        setTimeout(() => {
+            window.location.href = "tampil-testimoni.html";
+        }, 2000);
+    </script>
+
+</body>
+</html>
